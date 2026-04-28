@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renzh Neil Carreon | ELEVATE Artwork</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration with IMPORTANT flag enabled -->
+    <script>
+        tailwind.config = {
+            important: true, 
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans:['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            cyan: '#00FFFF',
+                            black: '#111111',
+                            dark: '#1A1A1A',
+                            gray: '#888888',
+                            light: '#F5F5F5',
+                            white: '#FFFFFF',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* ==========================================================================
+           ELEMENTOR RESET & FULL WIDTH OVERRIDE
+           ========================================================================== */
+        html, body {
+            overflow-x: hidden !important; /* Prevents horizontal scroll on mobile */
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        #elementor-portfolio-wrapper {
+            background-color: #FAFAFA !important;
+            color: #333333 !important;
+            font-family: 'Inter', sans-serif !important;
+            display: block !important;
+            box-sizing: border-box !important;
+            
+            /* FORCE FULL WIDTH IN ELEMENTOR/WORDPRESS */
+            width: 100vw !important;
+            max-width: 100vw !important;
+            position: relative !important;
+            left: 50% !important;
+            right: 50% !important;
+            margin-left: -50vw !important;
+            margin-right: -50vw !important;
+        }
+
+        #elementor-portfolio-wrapper * {
+            box-sizing: border-box !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        #elementor-portfolio-wrapper h1, #elementor-portfolio-wrapper h2, 
+        #elementor-portfolio-wrapper h3, #elementor-portfolio-wrapper h4, 
+        #elementor-portfolio-wrapper p, #elementor-portfolio-wrapper ul, 
+        #elementor-portfolio-wrapper li, #elementor-portfolio-wrapper a {
+            margin: 0; padding: 0; border: 0; vertical-align: baseline;
+            text-decoration: none !important; list-style: none !important;
+            color: inherit; line-height: inherit; box-shadow: none !important;
+        }
+
+        #elementor-portfolio-wrapper img {
+            max-width: 100% !important; height: auto !important; display: block !important;
+            margin: 0 !important; padding: 0 !important; border-radius: 0 !important;
+            box-shadow: none;
+        }
+
+        .bg-dots-light {
+            background-image: radial-gradient(#cccccc 2px, transparent 2px);
+            background-size: 24px 24px;
+        }
+        .bg-dots-dark {
+            background-image: radial-gradient(#333333 2px, transparent 2px);
+            background-size: 24px 24px;
+        }
+        .text-outline-custom {
+            color: transparent !important;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15) !important;
+        }
+        #elementor-portfolio-wrapper ::selection {
+            background-color: #00FFFF !important;
+            color: #000000 !important;
+        }
+
+        /* Lightbox Scrollbar */
+        .lightbox-scroll::-webkit-scrollbar { width: 8px; }
+        .lightbox-scroll::-webkit-scrollbar-track { background: #111; }
+        .lightbox-scroll::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
+        .lightbox-scroll::-webkit-scrollbar-thumb:hover { background: #00FFFF; }
+
+        /* Custom Scrollbar for Forms */
+        .custom-select-arrow {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.2em;
+        }
+
+        /* Smooth Marquee */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: inline-flex;
+            width: max-content;
+            animation: marquee 20s linear infinite;
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 100ms; }
+        .reveal-delay-2 { transition-delay: 200ms; }
+        .reveal-delay-3 { transition-delay: 300ms; }
+    </style>
+</head>
+<body>
+
+    <!-- MASTER WRAPPER FOR ELEMENTOR -->
+    <div id="elementor-portfolio-wrapper" class="w-full text-base selection:bg-brand-cyan selection:text-black antialiased relative">
+
+        <!-- Navigation (Fixed and Frozen on Top) -->
+        <nav class="fixed top-0 left-0 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md z-[900] transition-all shadow-sm">
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12 py-4 md:py-5 flex justify-between items-center relative">
+                <a href="#" class="text-2xl font-black tracking-widest text-brand-black uppercase hover:scale-105 transition-transform">
+                    Elevate
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-10 text-xs font-bold text-gray-500 uppercase tracking-widest">
+                    <a href="#" class="text-brand-black hover:text-[#01f6ff] transition-colors">Home</a>
+                    <a href="#about" class="hover:text-[#01f6ff] transition-colors">About</a>
+                    <a href="#portfolio" class="hover:text-[#01f6ff] transition-colors">Projects</a>
+                    <a href="#resume" class="hover:text-[#01f6ff] transition-colors">Resume</a>
+                </div>
+
+                <!-- Let's Talk Button: Default Mint Blue -> Hover Black -->
+                <a href="#" onclick="openContactModal(event)" class="hidden md:flex items-center gap-2 bg-[#01f6ff] text-black border-2 border-[#01f6ff] px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-[#111111] hover:text-[#01f6ff] transition-all shadow-[0_0_10px_rgba(1,246,255,0.15)] hover:shadow-[0_0_20px_rgba(1,246,255,0.4)] rounded-sm group cursor-pointer">
+                    Let's Talk <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+
+                <button id="mobile-menu-btn" class="md:hidden text-brand-black p-2"><i data-lucide="menu"></i></button>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-brand-dark border-b-2 border-brand-cyan flex-col items-center py-8 space-y-6 shadow-2xl max-h-[80vh] overflow-y-auto">
+                <a href="#about" class="text-xl font-black text-white hover:text-brand-cyan uppercase tracking-widest">About</a>
+                <a href="#portfolio" class="text-xl font-black text-white hover:text-brand-cyan uppercase tracking-widest">Projects</a>
+                <a href="#resume" class="text-xl font-black text-white hover:text-brand-cyan uppercase tracking-widest">Resume</a>
+                <a href="#" onclick="openContactModal(event)" class="bg-[#01f6ff] text-black border-2 border-[#01f6ff] hover:bg-[#111111] hover:text-[#01f6ff] font-bold uppercase tracking-widest px-8 py-3 mt-4 transition-all shadow-[0_0_10px_rgba(1,246,255,0.15)] hover:shadow-[0_0_20px_rgba(1,246,255,0.4)] rounded-sm cursor-pointer">Let's Talk</a>
+            </div>
+        </nav>
+
+        <!-- Spacer for Fixed Header -->
+        <div class="w-full h-[70px] md:h-[80px]"></div>
+
+        <!-- Hero Section -->
+        <section class="w-full relative pt-12 pb-24 md:pt-24 md:pb-32 overflow-hidden bg-[#FCFCFC]">
+            <div class="absolute top-10 right-[15%] w-[400px] h-[400px] bg-dots-light opacity-50 z-0 hidden lg:block"></div>
+            
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center relative z-10">
+                <div class="space-y-6 reveal text-center lg:text-left">
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] flex items-center justify-center lg:justify-start gap-2">
+                        <span class="w-2 h-2 bg-brand-cyan rounded-full"></span> HI, I'M RENZH NEIL
+                    </p>
+                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] text-brand-black tracking-tight">
+                        Designing Brands<br class="hidden sm:block">for Bright Future
+                    </h1>
+                    <p class="text-gray-500 max-w-md mx-auto lg:mx-0 text-sm md:text-base leading-relaxed">
+                        Performance-driven Senior eCommerce Designer and Creative Lead with 8+ years of experience delivering high-converting digital assets for global brands.
+                    </p>
+                    <div class="pt-4 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#portfolio" class="bg-brand-black text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#111111] hover:text-white transition-all w-full sm:w-auto text-center">
+                            Got a Project?
+                        </a>
+                        <a href="#" onclick="openContactModal(event)" class="bg-[#01f6ff] text-black border-2 border-[#01f6ff] px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#111111] hover:text-[#01f6ff] transition-all shadow-[0_0_10px_rgba(1,246,255,0.15)] hover:shadow-[0_0_20px_rgba(1,246,255,0.4)] rounded-sm w-full sm:w-auto text-center cursor-pointer">
+                            Let's Talk!
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative w-full max-w-[400px] md:max-w-[500px] mx-auto lg:ml-auto h-[350px] md:h-[550px] reveal reveal-delay-2 mt-8 lg:mt-0">
+                    <div class="absolute -left-6 md:-left-12 top-1/2 -translate-y-1/2 w-32 h-32 md:w-40 md:h-40 bg-brand-cyan rounded-full mix-blend-multiply z-20 animate-pulse"></div>
+                    <img src="https://beebranded.com/wp-content/uploads/2026/04/image1.jpeg" alt="Renzh Neil" class="absolute inset-0 w-full h-full object-cover z-10 shadow-2xl hover:scale-[1.02] transition-transform duration-500">
+                    <div class="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 w-48 h-48 md:w-64 md:h-64 bg-dots-light z-0"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="w-full py-20 md:py-24 bg-[#F9FAFB]">
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
+                
+                <!-- Image Container with Hover Animation -->
+                <div class="relative w-full max-w-[400px] md:max-w-[450px] mx-auto h-[350px] md:h-[450px] group cursor-pointer reveal">
+                    <div class="absolute -top-6 -left-6 md:-top-8 md:-left-8 w-48 h-48 md:w-64 md:h-64 z-0 transition-transform duration-500 group-hover:-translate-x-4 group-hover:-translate-y-4 opacity-70 group-hover:opacity-100" style="background-image: radial-gradient(#cccccc 2px, transparent 2px); background-size: 24px 24px;"></div>
+                    <img src="https://beebranded.com/wp-content/uploads/2026/04/image2.jpeg" alt="Workspace" class="absolute inset-0 w-full h-full object-cover z-10 shadow-[0_4px_20px_rgba(0,0,0,0.05)] rounded-2xl transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_15px_35px_rgba(1,246,255,0.25)]">
+                </div>
+
+                <div class="space-y-8 reveal reveal-delay-2 text-center lg:text-left">
+                    <div class="transition-transform duration-500 hover:translate-x-2">
+                        <p class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] flex items-center justify-center lg:justify-start gap-2 mb-4">
+                            <span class="w-1.5 h-1.5 bg-[#01f6ff] rounded-full"></span> ABOUT ME
+                        </p>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight text-[#111111] uppercase tracking-tight">
+                            Stunning Design with<br class="hidden sm:block">Refreshing Ideas
+                        </h2>
+                    </div>
+                    
+                    <p class="text-base sm:text-lg font-bold text-[#111111] border-l-4 border-[#01f6ff] pl-4 transition-all duration-300 hover:border-l-8 hover:pl-6 cursor-default py-2 text-left">
+                        "Proven track record in leading creative strategy for SaaS and eCommerce, consistently improving engagement by 25%+."
+                    </p>
+                    
+                    <p class="text-gray-500 text-sm leading-relaxed font-medium transition-colors duration-300 hover:text-gray-800 cursor-default text-left">
+                        Expert in Conversion Rate Optimization (CRO), WordPress Development, and AI-integrated workflows. I scale production through automation while aligning brand governance with core marketing goals.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-6 border-t border-gray-200">
+                        <div class="group hover:-translate-y-1.5 transition-all duration-300 cursor-default bg-transparent hover:bg-white hover:shadow-[0_10px_25px_rgba(1,246,255,0.15)] p-4 -m-4 rounded-xl text-center lg:text-left">
+                            <p class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 group-hover:text-[#01f6ff] transition-colors">Experience</p>
+                            <p class="text-lg sm:text-xl font-black text-[#111111]">8+ Years</p>
+                        </div>
+                        <div class="group hover:-translate-y-1.5 transition-all duration-300 cursor-default bg-transparent hover:bg-white hover:shadow-[0_10px_25px_rgba(1,246,255,0.15)] p-4 -m-4 rounded-xl text-center lg:text-left">
+                            <p class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 group-hover:text-[#01f6ff] transition-colors">Skills</p>
+                            <p class="text-lg sm:text-xl font-black text-[#111111]">Multi Media Designs</p>
+                        </div>
+                        <div class="group hover:-translate-y-1.5 transition-all duration-300 cursor-default bg-transparent hover:bg-white hover:shadow-[0_10px_25px_rgba(1,246,255,0.15)] p-4 -m-4 rounded-xl text-center lg:text-left">
+                            <p class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 group-hover:text-[#01f6ff] transition-colors">Degree</p>
+                            <p class="text-lg sm:text-xl font-black text-[#111111]">BS InfoTech</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Strip with Counters -->
+        <section class="w-full bg-[#01f6ff] relative z-20">
+            <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-0 text-center divide-y md:divide-y-0 md:divide-x divide-black/10">
+                <div class="group py-12 md:py-16 flex flex-col justify-center items-center hover:bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] relative z-10 cursor-default rounded-lg reveal reveal-delay-1">
+                    <h3 class="text-5xl md:text-6xl font-black text-[#111111] mb-2 tracking-tighter"><span class="stat-counter" data-target="8">0</span>+</h3>
+                    <p class="text-xs font-bold text-[#111111] uppercase tracking-[0.2em] group-hover:text-[#01f6ff] transition-colors duration-300">Years of Experience</p>
+                </div>
+                <div class="group py-12 md:py-16 bg-[#111111] flex flex-col justify-center items-center shadow-2xl z-20 scale-100 md:scale-105 rounded-lg transition-all duration-500 hover:scale-110 hover:-translate-y-1 hover:shadow-[0_25px_50px_rgba(1,246,255,0.3)] cursor-default reveal reveal-delay-2">
+                    <h3 class="text-5xl md:text-6xl font-black text-white mb-2 tracking-tighter"><span class="stat-counter" data-target="25">0</span>%+</h3>
+                    <p class="text-xs font-bold text-[#01f6ff] uppercase tracking-[0.2em] group-hover:text-white transition-colors duration-300">Engagement Boost</p>
+                </div>
+                <div class="group py-12 md:py-16 flex flex-col justify-center items-center hover:bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] relative z-10 cursor-default rounded-lg reveal reveal-delay-3">
+                    <h3 class="text-5xl md:text-6xl font-black text-[#111111] mb-2 tracking-tighter"><span class="stat-counter" data-target="10">0</span>+</h3>
+                    <p class="text-xs font-bold text-[#111111] uppercase tracking-[0.2em] group-hover:text-[#01f6ff] transition-colors duration-300">Global Brands Scaled</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Counter Animation Script -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const counters = document.querySelectorAll('.stat-counter');
+                const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const counter = entry.target;
+                            const target = +counter.getAttribute('data-target');
+                            let count = 0;
+                            const duration = 2000; 
+                            const interval = 30; 
+                            const step = target / (duration / interval);
+                            const updateCounter = setInterval(() => {
+                                count += step;
+                                if (count >= target) {
+                                    counter.innerText = target;
+                                    clearInterval(updateCounter);
+                                } else {
+                                    counter.innerText = Math.ceil(count);
+                                }
+                            }, interval);
+                            observer.unobserve(counter);
+                        }
+                    });
+                }, observerOptions);
+                counters.forEach(counter => observer.observe(counter));
+            });
+        </script>
+
+        <!-- How It Works (Dark Section) -->
+        <section class="w-full bg-brand-black py-20 md:py-24 relative overflow-hidden">
+            <div class="absolute right-[-10%] md:right-[20%] top-10 w-48 h-48 md:w-64 md:h-64 rounded-full border-[1px] border-gray-700 z-0"></div>
+            <div class="absolute right-[5%] md:right-[15%] top-20 w-32 h-32 md:w-48 md:h-48 rounded-full border-[1px] border-brand-cyan opacity-50 z-0"></div>
+
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative z-10 text-center mb-16 reveal">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] flex items-center justify-center gap-2 mb-4">
+                    <span class="w-1.5 h-1.5 bg-brand-cyan"></span> HOW IT WORKS
+                </p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white">Visualizing Your Ideas</h2>
+            </div>
+
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
+                <div class="relative text-center hover:-translate-y-2 transition-transform duration-300 reveal reveal-delay-1">
+                    <div class="text-[6rem] md:text-[8rem] font-black text-outline-custom absolute top-0 left-1/2 -translate-x-1/2 -translate-y-12 md:-translate-y-16 select-none opacity-50 hover:text-[#01f6ff] hover:opacity-20 transition-all">01</div>
+                    <h4 class="text-xl font-bold text-white mb-4 relative z-10">Strategy</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed relative z-10 max-w-[250px] mx-auto md:max-w-none">Analyze competitor marketplace data and metrics to define high-converting UI/UX strategies.</p>
+                </div>
+                <div class="relative text-center hover:-translate-y-2 transition-transform duration-300 reveal reveal-delay-2">
+                    <div class="text-[6rem] md:text-[8rem] font-black text-outline-custom absolute top-0 left-1/2 -translate-x-1/2 -translate-y-12 md:-translate-y-16 select-none opacity-50 hover:text-[#01f6ff] hover:opacity-20 transition-all">02</div>
+                    <h4 class="text-xl font-bold text-white mb-4 relative z-10">Wireframe</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed relative z-10 max-w-[250px] mx-auto md:max-w-none">Partner with developers to design assets, prioritizing mobile-first and seamless user journeys.</p>
+                </div>
+                <div class="relative text-center hover:-translate-y-2 transition-transform duration-300 reveal reveal-delay-3">
+                    <div class="text-[6rem] md:text-[8rem] font-black text-outline-custom absolute top-0 left-1/2 -translate-x-1/2 -translate-y-12 md:-translate-y-16 select-none opacity-50 hover:text-[#01f6ff] hover:opacity-20 transition-all">03</div>
+                    <h4 class="text-xl font-bold text-white mb-4 relative z-10">Production</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed relative z-10 max-w-[250px] mx-auto md:max-w-none">Execute 3D renders, video production, and integrate AI-assisted generation for rapid scaling.</p>
+                </div>
+                <div class="relative text-center hover:-translate-y-2 transition-transform duration-300 reveal reveal-delay-3">
+                    <div class="text-[6rem] md:text-[8rem] font-black text-outline-custom absolute top-0 left-1/2 -translate-x-1/2 -translate-y-12 md:-translate-y-16 select-none opacity-50 hover:text-[#01f6ff] hover:opacity-20 transition-all">04</div>
+                    <h4 class="text-xl font-bold text-white mb-4 relative z-10">Optimization</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed relative z-10 max-w-[250px] mx-auto md:max-w-none">Refine creative assets based on SEO guidelines to ensure maximum engagement and click-through rates.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="w-full py-20 md:py-24 bg-[#FCFCFC]">
+            <div class="max-w-[1000px] mx-auto px-6 md:px-12">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 border-b border-gray-200 pb-8 reveal gap-4">
+                    <div>
+                        <p class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] flex items-center gap-2 mb-4">
+                            <span class="w-1.5 h-1.5 bg-brand-cyan"></span> RECENT EXPERIENCE
+                        </p>
+                        <h2 class="text-3xl md:text-4xl font-bold text-brand-black">Big Ideas, Real Results</h2>
+                    </div>
+                    <a href="#resume" class="inline-block bg-brand-black text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-[#01f6ff] hover:text-black transition-colors hover:shadow-[0_0_15px_rgba(1,246,255,0.4)] w-full sm:w-auto text-center">
+                        View Full Resume
+                    </a>
+                </div>
+
+                <div class="space-y-10 reveal reveal-delay-2">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 group hover:translate-x-2 transition-transform cursor-default">
+                        <div class="w-12 h-12 bg-brand-cyan rounded-full flex items-center justify-center text-brand-black font-bold shrink-0 shadow-[0_0_15px_rgba(1,246,255,0.4)]">01</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-brand-black mb-1 group-hover:text-[#01f6ff] transition-colors">Creatives Designer <span class="text-sm font-normal text-gray-500">| MultiplyMii (Plugable)</span></h4>
+                            <p class="text-gray-500 text-sm">Generated high-impact Amazon listings and 3D renders, improving conversion by 18%-30%.</p>
+                        </div>
+                        <div class="text-sm font-bold text-brand-black sm:text-right shrink-0 group-hover:text-[#01f6ff] transition-colors">
+                            May 2025 – Apr 2026
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 group hover:translate-x-2 transition-transform cursor-default">
+                        <div class="w-12 h-12 bg-[#EFEFEF] group-hover:bg-brand-cyan group-hover:shadow-[0_0_15px_rgba(1,246,255,0.4)] transition-all rounded-full flex items-center justify-center text-brand-black font-bold shrink-0">02</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-brand-black mb-1 group-hover:text-[#01f6ff] transition-colors">Creative Lead <span class="text-sm font-normal text-gray-500">| Vertex Consulting Group</span></h4>
+                            <p class="text-gray-500 text-sm">Spearheaded AI-assisted design systems, reducing production turnaround time by 50%.</p>
+                        </div>
+                        <div class="text-sm font-bold text-brand-black sm:text-right shrink-0 group-hover:text-[#01f6ff] transition-colors">
+                            Jun 2024 – May 2025
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 group hover:translate-x-2 transition-transform cursor-default">
+                        <div class="w-12 h-12 bg-[#EFEFEF] group-hover:bg-brand-cyan group-hover:shadow-[0_0_15px_rgba(1,246,255,0.4)] transition-all rounded-full flex items-center justify-center text-brand-black font-bold shrink-0">03</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-brand-black mb-1 group-hover:text-[#01f6ff] transition-colors">Amazon Creatives Designer <span class="text-sm font-normal text-gray-500">| VAA Philippines</span></h4>
+                            <p class="text-gray-500 text-sm">Designed high-converting EBC/A+ Content and optimized mobile-first Shopify storefronts.</p>
+                        </div>
+                        <div class="text-sm font-bold text-brand-black sm:text-right shrink-0 group-hover:text-[#01f6ff] transition-colors">
+                            Aug 2022 – Sep 2025
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 group hover:translate-x-2 transition-transform cursor-default">
+                        <div class="w-12 h-12 bg-[#EFEFEF] group-hover:bg-brand-cyan group-hover:shadow-[0_0_15px_rgba(1,246,255,0.4)] transition-all rounded-full flex items-center justify-center text-brand-black font-bold shrink-0">04</div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-brand-black mb-1 group-hover:text-[#01f6ff] transition-colors">Senior Project Design Manager <span class="text-sm font-normal text-gray-500">| EMS Digital Ltd.</span></h4>
+                            <p class="text-gray-500 text-sm">Partnered with 20+ clients to deliver digital business cards, increasing lead gen by 22%.</p>
+                        </div>
+                        <div class="text-sm font-bold text-brand-black sm:text-right shrink-0 group-hover:text-[#01f6ff] transition-colors">
+                            Jan 2020 – Oct 2022
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section with Carousels -->
+        <section id="portfolio" class="w-full py-20 md:py-24 bg-[#EBEBEB]">
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12 text-center mb-16 reveal">
+                <p class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] flex items-center justify-center gap-2 mb-4">
+                    <span class="w-1.5 h-1.5 bg-brand-cyan"></span> PORTFOLIO
+                </p>
+                <h2 class="text-3xl md:text-5xl font-bold text-brand-black">Design that Visible for All</h2>
+            </div>
+
+            <div class="max-w-[1100px] mx-auto px-6 md:px-12 space-y-24">
+                
+                <!-- Project 1: eCommerce (Slider) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center reveal">
+                    <div class="order-2 md:order-1 space-y-6">
+                        <span class="inline-block bg-brand-cyan px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-black">eCommerce Creatives</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-brand-black">Amazon Storefronts, A+ & Listing Images</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Generated high-impact Amazon listings and mobile-first amazon creatives. Collaborated with stakeholders to conduct visual trend analysis, improving conversion rates heavily.</p>
+                        <div class="flex flex-wrap gap-2 pt-4 items-center">
+                            <button onclick="slide('slider1', -1)" class="w-10 h-10 border border-brand-black flex items-center justify-center hover:bg-brand-black hover:text-[#01f6ff] transition-colors"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                            <button onclick="slide('slider1', 1)" class="w-10 h-10 border border-brand-black flex items-center justify-center hover:bg-brand-black hover:text-[#01f6ff] transition-colors"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                            <a href="https://elevateartworkecom.my.canva.site/amazon-creatives" target="_blank" class="ml-2 h-10 px-6 border border-brand-black bg-[#01f6ff] flex items-center justify-center text-[10px] sm:text-xs font-bold uppercase tracking-widest text-brand-black hover:bg-brand-black hover:text-[#01f6ff] transition-colors">
+                                View More
+                            </a>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2 overflow-hidden relative shadow-2xl group border border-gray-300 w-full">
+                        <div id="slider1" class="flex transition-transform duration-500 w-full" style="transform: translateX(0%);">
+                            <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/AMAZON-CREATIVES.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/AMAZON-CREATIVES.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                            <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/AMAZON-CREATIVES-1.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/AMAZON-CREATIVES-1.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                            <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/AMAZON-CREATIVES-3.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/AMAZON-CREATIVES-3.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                            <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/AMAZON-CREATIVES-2.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/AMAZON-CREATIVES-2.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Marketing Creatives -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center reveal reveal-delay-1">
+                    <div class="overflow-hidden relative shadow-2xl group border border-gray-300 w-full">
+                        <div id="slider2" class="flex transition-transform duration-500 w-full" style="transform: translateX(0%);">
+                            <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/Marketing-Creatives.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/Marketing-Creatives.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                             <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/Marketing-Creatives-1.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/Marketing-Creatives-1.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                             <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/Marketing-Creatives-2.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/Marketing-Creatives-2.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                             <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/Marketing-Creatives-3.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/Marketing-Creatives-3.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                             <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/Marketing-Creatives-4.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/Marketing-Creatives-4.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                             <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/Marketing-Creatives-5.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/Marketing-Creatives-5.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6 pl-0 md:pl-8 w-full">
+                        <span class="inline-block bg-brand-cyan px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-black">Multimedia Designs</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-brand-black">Marketing Creatives and Print Designs</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Spearheaded the end-to-end production of multi-channel marketing campaigns and high-fidelity print collateral; leveraged advanced design suites to create cohesive visual ecosystems that drove measurable increases in user engagement and conversion rates.</p>
+                        <div class="flex flex-wrap gap-2 pt-4 items-center">
+                            <button onclick="slide('slider2', -1)" class="w-10 h-10 border border-brand-black flex items-center justify-center hover:bg-brand-black hover:text-[#01f6ff] transition-colors"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                            <button onclick="slide('slider2', 1)" class="w-10 h-10 border border-brand-black flex items-center justify-center hover:bg-brand-black hover:text-[#01f6ff] transition-colors"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                            <a href="https://elevateartworkecom.my.canva.site/marketing-creatives" target="_blank" class="ml-2 h-10 px-6 border border-brand-black bg-[#01f6ff] flex items-center justify-center text-[10px] sm:text-xs font-bold uppercase tracking-widest text-brand-black hover:bg-brand-black hover:text-[#01f6ff] transition-colors">
+                                View More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: UI/UX (Slider) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center reveal reveal-delay-2">
+                    <div class="order-2 md:order-1 space-y-6">
+                        <span class="inline-block bg-brand-cyan px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-black">UI/UX Designs</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-brand-black">Website & UI App Designs</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Directed creative strategy for high-converting digital platforms using UI/UX best practices to personally design multimedia assets and visual ecosystems that improved user engagement by 25%.</p>
+                        <div class="flex flex-wrap gap-2 pt-4 items-center">
+                            <button onclick="slide('slider3', -1)" class="w-10 h-10 border border-brand-black flex items-center justify-center hover:bg-brand-black hover:text-[#01f6ff] transition-colors"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                            <button onclick="slide('slider3', 1)" class="w-10 h-10 border border-brand-black flex items-center justify-center hover:bg-brand-black hover:text-[#01f6ff] transition-colors"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                            <a href="https://elevateartworkecom.my.canva.site/website-ui-app-designs" target="_blank" class="ml-2 h-10 px-6 border border-brand-black bg-[#01f6ff] flex items-center justify-center text-[10px] sm:text-xs font-bold uppercase tracking-widest text-brand-black hover:bg-brand-black hover:text-[#01f6ff] transition-colors">
+                                View More
+                            </a>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2 overflow-hidden relative shadow-2xl group border border-gray-300 w-full">
+                        <div id="slider3" class="flex transition-transform duration-500 w-full" style="transform: translateX(0%);">
+                            <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/Website-UI-App-Designs.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/Website-UI-App-Designs.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                            <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/Website-UI-App-Designs-5.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/Website-UI-App-Designs-5.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                            <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/Website-UI-App-Designs-4.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/Website-UI-App-Designs-4.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                            <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/Website-UI-App-Designs-3.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/Website-UI-App-Designs-3.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                            <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/Website-UI-App-Designs-2.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/Website-UI-App-Designs-2.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                            <div class="group/img w-full shrink-0 relative cursor-pointer overflow-hidden" onclick="openLightbox('https://beebranded.com/wp-content/uploads/2026/04/Website-UI-App-Designs-1.png')">
+                                <img src="https://beebranded.com/wp-content/uploads/2026/04/Website-UI-App-Designs-1.png" class="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-110">
+                                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover/img:opacity-100 flex items-center justify-center transition-opacity">
+                                    <i data-lucide="maximize" class="text-[#01f6ff] w-10 h-10 drop-shadow-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Gallery (Stories & Horizontal) -->
+                <div class="pt-16 mt-16 border-t border-gray-300 space-y-16 reveal">
+                    <div class="text-center space-y-4 max-w-[800px] mx-auto">
+                        <span class="inline-block bg-brand-cyan px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-black hover:scale-105 transition-transform">Video Production</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-brand-black hover:text-[#01f6ff] transition-colors cursor-default">Multi-Channel Video Campaigns & 3D Animation</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">Strategized and produced multi-channel video campaigns, animated explainer videos, and 3D product animations via Blender. Optimized for social platforms and YouTube, boosting click-through rates (CTR) by 20% and user engagement by 28%.</p>
+                    </div>
+
+                    <!-- Vertical Videos (Stories / Facebook MyDay Style) -->
+                    <div class="space-y-6">
+                        <h4 class="text-xl font-bold text-brand-black flex items-center gap-2">
+                            <i data-lucide="smartphone" class="w-5 h-5 text-[#01f6ff]"></i> Short-Form Social Ads (Vertical)
+                        </h4>
+                        
+                        <!-- Slider Wrapper -->
+                        <div class="relative w-full group/slider">
+                            
+                            <!-- Left Arrow -->
+                            <button onclick="scrollTrack('vertical-slider', -1)" class="absolute -left-2 md:-left-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white text-black border border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:text-[#01f6ff] hover:border-[#01f6ff] hover:shadow-[0_0_15px_rgba(1,246,255,0.4)] z-20 transition-all opacity-100 md:opacity-0 md:group-hover/slider:opacity-100 focus:outline-none hover:scale-110">
+                                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                            </button>
+                            
+                            <!-- Right Arrow -->
+                            <button onclick="scrollTrack('vertical-slider', 1)" class="absolute -right-2 md:-right-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white text-black border border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:text-[#01f6ff] hover:border-[#01f6ff] hover:shadow-[0_0_15px_rgba(1,246,255,0.4)] z-20 transition-all opacity-100 md:opacity-0 md:group-hover/slider:opacity-100 focus:outline-none hover:scale-110">
+                                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                            </button>
+
+                            <div id="vertical-slider" class="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth py-4">
+                                <!-- Video Card 1 -->
+                                <div class="shrink-0 w-[80%] sm:w-[calc(50%-12px)] md:w-[calc(25%-18px)] snap-center relative aspect-[9/16] bg-gray-800 rounded-2xl overflow-hidden group shadow-lg cursor-pointer border border-gray-200">
+                                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=600&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent group-hover:from-black/90 transition-all"></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/50 group-hover:bg-[#01f6ff] group-hover:border-[#01f6ff] group-hover:text-black group-hover:shadow-[0_0_15px_rgba(1,246,255,0.8)] transition-all">
+                                            <i data-lucide="play" class="w-5 h-5 ml-1 text-white group-hover:text-black"></i>
+                                        </div>
+                                    </div>
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-xs font-bold leading-tight group-hover:text-[#01f6ff] transition-colors">Consumer Electronics Ad</p>
+                                    </div>
+                                </div>
+                                <!-- Video Card 2 -->
+                                <div class="shrink-0 w-[80%] sm:w-[calc(50%-12px)] md:w-[calc(25%-18px)] snap-center relative aspect-[9/16] bg-gray-800 rounded-2xl overflow-hidden group shadow-lg cursor-pointer border border-gray-200">
+                                    <img src="https://images.unsplash.com/photo-1601056693425-4c07d353683a?q=80&w=600&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent group-hover:from-black/90 transition-all"></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/50 group-hover:bg-[#01f6ff] group-hover:border-[#01f6ff] group-hover:text-black group-hover:shadow-[0_0_15px_rgba(1,246,255,0.8)] transition-all">
+                                            <i data-lucide="play" class="w-5 h-5 ml-1 text-white group-hover:text-black"></i>
+                                        </div>
+                                    </div>
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-xs font-bold leading-tight group-hover:text-[#01f6ff] transition-colors">SaaS Promo Story</p>
+                                    </div>
+                                </div>
+                                <!-- Video Card 3 -->
+                                <div class="shrink-0 w-[80%] sm:w-[calc(50%-12px)] md:w-[calc(25%-18px)] snap-center relative aspect-[9/16] bg-gray-800 rounded-2xl overflow-hidden group shadow-lg cursor-pointer border border-gray-200">
+                                    <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=600&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent group-hover:from-black/90 transition-all"></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/50 group-hover:bg-[#01f6ff] group-hover:border-[#01f6ff] group-hover:text-black group-hover:shadow-[0_0_15px_rgba(1,246,255,0.8)] transition-all">
+                                            <i data-lucide="play" class="w-5 h-5 ml-1 text-white group-hover:text-black"></i>
+                                        </div>
+                                    </div>
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-xs font-bold leading-tight group-hover:text-[#01f6ff] transition-colors">Real Estate Campaign</p>
+                                    </div>
+                                </div>
+                                <!-- Video Card 4 -->
+                                <div class="shrink-0 w-[80%] sm:w-[calc(50%-12px)] md:w-[calc(25%-18px)] snap-center relative aspect-[9/16] bg-gray-800 rounded-2xl overflow-hidden group shadow-lg cursor-pointer border border-gray-200">
+                                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=600&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent group-hover:from-black/90 transition-all"></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-12 h-12 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/50 group-hover:bg-[#01f6ff] group-hover:border-[#01f6ff] group-hover:text-black group-hover:shadow-[0_0_15px_rgba(1,246,255,0.8)] transition-all">
+                                            <i data-lucide="play" class="w-5 h-5 ml-1 text-white group-hover:text-black"></i>
+                                        </div>
+                                    </div>
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <p class="text-white text-xs font-bold leading-tight group-hover:text-[#01f6ff] transition-colors">Product Feature Highlight</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Horizontal Videos -->
+                    <div class="space-y-6 mt-16">
+                        <h4 class="text-xl font-bold text-brand-black flex items-center gap-2">
+                            <i data-lucide="monitor-play" class="w-5 h-5 text-[#01f6ff]"></i> YouTube & Explainer Videos (Horizontal)
+                        </h4>
+                        
+                        <!-- Slider Wrapper -->
+                        <div class="relative w-full group/hslider">
+                            
+                            <!-- Left Arrow -->
+                            <button onclick="scrollTrack('horizontal-slider', -1)" class="absolute -left-2 md:-left-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white text-black border border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:text-[#01f6ff] hover:border-[#01f6ff] hover:shadow-[0_0_15px_rgba(1,246,255,0.4)] z-20 transition-all opacity-100 md:opacity-0 md:group-hover/hslider:opacity-100 focus:outline-none hover:scale-110">
+                                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                            </button>
+                            
+                            <!-- Right Arrow -->
+                            <button onclick="scrollTrack('horizontal-slider', 1)" class="absolute -right-2 md:-right-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white text-black border border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:text-[#01f6ff] hover:border-[#01f6ff] hover:shadow-[0_0_15px_rgba(1,246,255,0.4)] z-20 transition-all opacity-100 md:opacity-0 md:group-hover/hslider:opacity-100 focus:outline-none hover:scale-110">
+                                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                            </button>
+
+                            <div id="horizontal-slider" class="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth py-4">
+                                
+                                <!-- Horiz Card 1 -->
+                                <div class="shrink-0 w-[90%] md:w-[calc(50%-12px)] snap-center relative bg-[#111111] rounded-xl overflow-hidden group shadow-lg border border-gray-800 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                                    <div class="relative w-full aspect-video bg-black">
+                                        <!-- Note: Placeholder YT videos replaced exactly into layout -->
+                                        <iframe class="absolute inset-0 w-full h-full border-0" src="https://www.youtube.com/embed/ScMzIvxBSi4?rel=0" title="3D Product Animation via Blender" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="p-6 md:p-8 flex flex-col flex-1 justify-between">
+                                        <div>
+                                            <h4 class="text-white text-lg md:text-xl font-bold group-hover:text-[#01f6ff] transition-colors">3D Product Animation via Blender</h4>
+                                            <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">Showcasing technical features to increase engagement and provide a high-end visual experience.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Horiz Card 2 -->
+                                <div class="shrink-0 w-[90%] md:w-[calc(50%-12px)] snap-center relative bg-[#111111] rounded-xl overflow-hidden group shadow-lg border border-gray-800 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                                    <div class="relative w-full aspect-video bg-black">
+                                        <iframe class="absolute inset-0 w-full h-full border-0" src="https://www.youtube.com/embed/jfKfPfyJRdk?rel=0" title="Animated Explainer Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="p-6 md:p-8 flex flex-col flex-1 justify-between">
+                                        <div>
+                                            <h4 class="text-white text-lg md:text-xl font-bold group-hover:text-[#01f6ff] transition-colors">Animated Explainer Video (Animaker)</h4>
+                                            <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">Full YouTube optimization & SEO-friendly discovery for digital SaaS products.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Horiz Card 3 -->
+                                <div class="shrink-0 w-[90%] md:w-[calc(50%-12px)] snap-center relative bg-[#111111] rounded-xl overflow-hidden group shadow-lg border border-gray-800 flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                                    <div class="relative w-full aspect-video bg-black">
+                                        <iframe class="absolute inset-0 w-full h-full border-0" src="https://www.youtube.com/embed/g8EnR-AawU8?rel=0" title="Commercial Campaign" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="p-6 md:p-8 flex flex-col flex-1 justify-between">
+                                        <div>
+                                            <h4 class="text-white text-lg md:text-xl font-bold group-hover:text-[#01f6ff] transition-colors">Commercial Video Campaign</h4>
+                                            <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">Strategically directed multi-channel campaigns driving 20% increases in CTR.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                        <!-- Updated VIEW MORE VIDEOS BUTTON: Default Mint Blue -> Hover Black -->
+                        <div class="flex justify-center pt-8 pb-4">
+                            <a href="#" target="_blank" class="inline-flex items-center gap-2 bg-[#01f6ff] text-black border-2 border-[#01f6ff] px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#111111] hover:text-[#01f6ff] transition-all shadow-[0_0_10px_rgba(1,246,255,0.15)] hover:shadow-[0_0_20px_rgba(1,246,255,0.4)] rounded-sm group w-full sm:w-auto justify-center text-center">
+                                View More Videos <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW SECTION: Web Designs & Landing Pages -->
+                <div class="pt-16 mt-16 border-t border-gray-300 space-y-16 reveal">
+                    <div class="text-center space-y-4 max-w-[800px] mx-auto">
+                        <span class="inline-block bg-brand-cyan px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-black hover:scale-105 transition-transform">UI/UX & Web Dev</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-brand-black hover:text-[#01f6ff] transition-colors cursor-default">Recent Web Designs & Landing Pages</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">High-converting landing pages and responsive website architectures designed and developed using WordPress, Elementor, and Shopify prioritizing mobile-first and seamless user journeys.</p>
+                    </div>
+
+                    <!-- Slider Wrapper -->
+                    <div class="relative w-full group/webslider">
+                        <!-- Left Arrow -->
+                        <button onclick="scrollTrack('web-slider', -1)" class="absolute -left-2 md:-left-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white text-black border border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:text-[#01f6ff] hover:border-[#01f6ff] hover:shadow-[0_0_15px_rgba(1,246,255,0.4)] z-20 transition-all opacity-100 md:opacity-0 md:group-hover/webslider:opacity-100 focus:outline-none hover:scale-110">
+                            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                        </button>
+                        
+                        <!-- Right Arrow -->
+                        <button onclick="scrollTrack('web-slider', 1)" class="absolute -right-2 md:-right-6 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white text-black border border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:text-[#01f6ff] hover:border-[#01f6ff] hover:shadow-[0_0_15px_rgba(1,246,255,0.4)] z-20 transition-all opacity-100 md:opacity-0 md:group-hover/webslider:opacity-100 focus:outline-none hover:scale-110">
+                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                        </button>
+
+                        <div id="web-slider" class="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth py-4">
+                            
+                            <!-- Web Card 1 -->
+                            <div class="shrink-0 w-[90%] md:w-[calc(50%-12px)] snap-center relative bg-[#111111] border border-gray-800 rounded-xl overflow-hidden shadow-lg group/webcard flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                                <div class="relative w-full aspect-[4/3] bg-[#000] overflow-hidden">
+                                    <div class="absolute inset-0 z-10 pointer-events-auto border-b border-gray-800 group-hover/webcard:border-[#01f6ff] transition-colors"></div>
+                                    <iframe src="https://iemrenzh.github.io/nest-finder/" class="absolute top-0 left-0 w-[200%] h-[200%] origin-top-left scale-50 border-0 pointer-events-none opacity-80 group-hover/webcard:opacity-100 transition-opacity"></iframe>
+                                </div>
+                                <div class="p-6 md:p-8 flex flex-col flex-1 justify-between">
+                                    <div class="mb-6">
+                                        <h4 class="text-white text-lg md:text-xl font-bold group-hover/webcard:text-[#01f6ff] transition-colors">Nest Finder</h4>
+                                        <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">Premium Real Estate discovery platform with a clean, modern UI.</p>
+                                    </div>
+                                    <a href="https://iemrenzh.github.io/nest-finder/" target="_blank" class="w-full text-center bg-[#01f6ff] text-black border border-[#01f6ff] font-bold uppercase tracking-widest text-[10px] md:text-xs py-4 rounded-sm hover:bg-[#111111] hover:text-[#01f6ff] transition-colors relative z-20 flex items-center justify-center gap-2">
+                                        View Live Site <i data-lucide="external-link" class="w-3 h-3"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Web Card 2 -->
+                            <div class="shrink-0 w-[90%] md:w-[calc(50%-12px)] snap-center relative bg-[#111111] border border-gray-800 rounded-xl overflow-hidden shadow-lg group/webcard flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                                <div class="relative w-full aspect-[4/3] bg-[#000] overflow-hidden">
+                                    <div class="absolute inset-0 z-10 pointer-events-auto border-b border-gray-800 group-hover/webcard:border-[#01f6ff] transition-colors"></div>
+                                    <iframe src="https://iemrenzh.github.io/RCI-Air-Conditioning-Company/" class="absolute top-0 left-0 w-[200%] h-[200%] origin-top-left scale-50 border-0 pointer-events-none opacity-80 group-hover/webcard:opacity-100 transition-opacity"></iframe>
+                                </div>
+                                <div class="p-6 md:p-8 flex flex-col flex-1 justify-between">
+                                    <div class="mb-6">
+                                        <h4 class="text-white text-lg md:text-xl font-bold group-hover/webcard:text-[#01f6ff] transition-colors">RCI Air Conditioning</h4>
+                                        <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">Corporate landing page for HVAC solutions and services.</p>
+                                    </div>
+                                    <a href="https://iemrenzh.github.io/RCI-Air-Conditioning-Company/" target="_blank" class="w-full text-center bg-[#01f6ff] text-black border border-[#01f6ff] font-bold uppercase tracking-widest text-[10px] md:text-xs py-4 rounded-sm hover:bg-[#111111] hover:text-[#01f6ff] transition-colors relative z-20 flex items-center justify-center gap-2">
+                                        View Live Site <i data-lucide="external-link" class="w-3 h-3"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Web Card 3 -->
+                            <div class="shrink-0 w-[90%] md:w-[calc(50%-12px)] snap-center relative bg-[#111111] border border-gray-800 rounded-xl overflow-hidden shadow-lg group/webcard flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                                <div class="relative w-full aspect-[4/3] bg-[#000] overflow-hidden">
+                                    <div class="absolute inset-0 z-10 pointer-events-auto border-b border-gray-800 group-hover/webcard:border-[#01f6ff] transition-colors"></div>
+                                    <iframe src="https://iemrenzh.github.io/flow-tech/" class="absolute top-0 left-0 w-[200%] h-[200%] origin-top-left scale-50 border-0 pointer-events-none opacity-80 group-hover/webcard:opacity-100 transition-opacity"></iframe>
+                                </div>
+                                <div class="p-6 md:p-8 flex flex-col flex-1 justify-between">
+                                    <div class="mb-6">
+                                        <h4 class="text-white text-lg md:text-xl font-bold group-hover/webcard:text-[#01f6ff] transition-colors">Flow Tech</h4>
+                                        <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">Industrial tech service landing page with high-converting CTA structure.</p>
+                                    </div>
+                                    <a href="https://iemrenzh.github.io/flow-tech/" target="_blank" class="w-full text-center bg-[#01f6ff] text-black border border-[#01f6ff] font-bold uppercase tracking-widest text-[10px] md:text-xs py-4 rounded-sm hover:bg-[#111111] hover:text-[#01f6ff] transition-colors relative z-20 flex items-center justify-center gap-2">
+                                        View Live Site <i data-lucide="external-link" class="w-3 h-3"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Web Card 4 -->
+                            <div class="shrink-0 w-[90%] md:w-[calc(50%-12px)] snap-center relative bg-[#111111] border border-gray-800 rounded-xl overflow-hidden shadow-lg group/webcard flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                                <div class="relative w-full aspect-[4/3] bg-[#000] overflow-hidden">
+                                    <div class="absolute inset-0 z-10 pointer-events-auto border-b border-gray-800 group-hover/webcard:border-[#01f6ff] transition-colors"></div>
+                                    <iframe src="https://iemrenzh.github.io/mjs-cooling/" class="absolute top-0 left-0 w-[200%] h-[200%] origin-top-left scale-50 border-0 pointer-events-none opacity-80 group-hover/webcard:opacity-100 transition-opacity"></iframe>
+                                </div>
+                                <div class="p-6 md:p-8 flex flex-col flex-1 justify-between">
+                                    <div class="mb-6">
+                                        <h4 class="text-white text-lg md:text-xl font-bold group-hover/webcard:text-[#01f6ff] transition-colors">MJS Cooling</h4>
+                                        <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">Service-oriented website design for cooling systems experts.</p>
+                                    </div>
+                                    <a href="https://iemrenzh.github.io/mjs-cooling/" target="_blank" class="w-full text-center bg-[#01f6ff] text-black border border-[#01f6ff] font-bold uppercase tracking-widest text-[10px] md:text-xs py-4 rounded-sm hover:bg-[#111111] hover:text-[#01f6ff] transition-colors relative z-20 flex items-center justify-center gap-2">
+                                        View Live Site <i data-lucide="external-link" class="w-3 h-3"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Web Card 5 -->
+                            <div class="shrink-0 w-[90%] md:w-[calc(50%-12px)] snap-center relative bg-[#111111] border border-gray-800 rounded-xl overflow-hidden shadow-lg group/webcard flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                                <div class="relative w-full aspect-[4/3] bg-[#000] overflow-hidden">
+                                    <div class="absolute inset-0 z-10 pointer-events-auto border-b border-gray-800 group-hover/webcard:border-[#01f6ff] transition-colors"></div>
+                                    <iframe src="https://iemrenzh.github.io/reallygreatsite/" class="absolute top-0 left-0 w-[200%] h-[200%] origin-top-left scale-50 border-0 pointer-events-none opacity-80 group-hover/webcard:opacity-100 transition-opacity"></iframe>
+                                </div>
+                                <div class="p-6 md:p-8 flex flex-col flex-1 justify-between">
+                                    <div class="mb-6">
+                                        <h4 class="text-white text-lg md:text-xl font-bold group-hover/webcard:text-[#01f6ff] transition-colors">Brand Showcase</h4>
+                                        <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">General brand-focused conceptual website build.</p>
+                                    </div>
+                                    <a href="https://iemrenzh.github.io/reallygreatsite/" target="_blank" class="w-full text-center bg-[#01f6ff] text-black border border-[#01f6ff] font-bold uppercase tracking-widest text-[10px] md:text-xs py-4 rounded-sm hover:bg-[#111111] hover:text-[#01f6ff] transition-colors relative z-20 flex items-center justify-center gap-2">
+                                        View Live Site <i data-lucide="external-link" class="w-3 h-3"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Web Card 6 -->
+                            <div class="shrink-0 w-[90%] md:w-[calc(50%-12px)] snap-center relative bg-[#111111] border border-gray-800 rounded-xl overflow-hidden shadow-lg group/webcard flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                                <div class="relative w-full aspect-[4/3] bg-[#000] overflow-hidden">
+                                    <div class="absolute inset-0 z-10 pointer-events-auto border-b border-gray-800 group-hover/webcard:border-[#01f6ff] transition-colors"></div>
+                                    <iframe src="https://iemrenzh.github.io/orcacleaning/" class="absolute top-0 left-0 w-[200%] h-[200%] origin-top-left scale-50 border-0 pointer-events-none opacity-80 group-hover/webcard:opacity-100 transition-opacity"></iframe>
+                                </div>
+                                <div class="p-6 md:p-8 flex flex-col flex-1 justify-between">
+                                    <div class="mb-6">
+                                        <h4 class="text-white text-lg md:text-xl font-bold group-hover/webcard:text-[#01f6ff] transition-colors">Orca Cleaning</h4>
+                                        <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">Clean, trustworthy UI for a professional cleaning service business.</p>
+                                    </div>
+                                    <a href="https://iemrenzh.github.io/orcacleaning/" target="_blank" class="w-full text-center bg-[#01f6ff] text-black border border-[#01f6ff] font-bold uppercase tracking-widest text-[10px] md:text-xs py-4 rounded-sm hover:bg-[#111111] hover:text-[#01f6ff] transition-colors relative z-20 flex items-center justify-center gap-2">
+                                        View Live Site <i data-lucide="external-link" class="w-3 h-3"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Web Card 7 -->
+                            <div class="shrink-0 w-[90%] md:w-[calc(50%-12px)] snap-center relative bg-[#111111] border border-gray-800 rounded-xl overflow-hidden shadow-lg group/webcard flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                                <div class="relative w-full aspect-[4/3] bg-[#000] overflow-hidden">
+                                    <div class="absolute inset-0 z-10 pointer-events-auto border-b border-gray-800 group-hover/webcard:border-[#01f6ff] transition-colors"></div>
+                                    <iframe src="https://iemrenzh-dev.github.io/SHADOW-GRACE/" class="absolute top-0 left-0 w-[200%] h-[200%] origin-top-left scale-50 border-0 pointer-events-none opacity-80 group-hover/webcard:opacity-100 transition-opacity"></iframe>
+                                </div>
+                                <div class="p-6 md:p-8 flex flex-col flex-1 justify-between">
+                                    <div class="mb-6">
+                                        <h4 class="text-white text-lg md:text-xl font-bold group-hover/webcard:text-[#01f6ff] transition-colors">Shadow Grace</h4>
+                                        <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">Luxury fashion and aesthetic brand portfolio landing page.</p>
+                                    </div>
+                                    <a href="https://iemrenzh-dev.github.io/SHADOW-GRACE/" target="_blank" class="w-full text-center bg-[#01f6ff] text-black border border-[#01f6ff] font-bold uppercase tracking-widest text-[10px] md:text-xs py-4 rounded-sm hover:bg-[#111111] hover:text-[#01f6ff] transition-colors relative z-20 flex items-center justify-center gap-2">
+                                        View Live Site <i data-lucide="external-link" class="w-3 h-3"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Web Card 8 -->
+                            <div class="shrink-0 w-[90%] md:w-[calc(50%-12px)] snap-center relative bg-[#111111] border border-gray-800 rounded-xl overflow-hidden shadow-lg group/webcard flex flex-col hover:-translate-y-2 transition-transform duration-300">
+                                <div class="relative w-full aspect-[4/3] bg-[#000] overflow-hidden">
+                                    <div class="absolute inset-0 z-10 pointer-events-auto border-b border-gray-800 group-hover/webcard:border-[#01f6ff] transition-colors"></div>
+                                    <iframe src="https://iemrenzh-dev.github.io/ELEVATE-Premium-Real-Estate/" class="absolute top-0 left-0 w-[200%] h-[200%] origin-top-left scale-50 border-0 pointer-events-none opacity-80 group-hover/webcard:opacity-100 transition-opacity"></iframe>
+                                </div>
+                                <div class="p-6 md:p-8 flex flex-col flex-1 justify-between">
+                                    <div class="mb-6">
+                                        <h4 class="text-white text-lg md:text-xl font-bold group-hover/webcard:text-[#01f6ff] transition-colors">Elevate Premium Real Estate</h4>
+                                        <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">High-end real estate presentation with elegant typography.</p>
+                                    </div>
+                                    <a href="https://iemrenzh-dev.github.io/ELEVATE-Premium-Real-Estate/" target="_blank" class="w-full text-center bg-[#01f6ff] text-black border border-[#01f6ff] font-bold uppercase tracking-widest text-[10px] md:text-xs py-4 rounded-sm hover:bg-[#111111] hover:text-[#01f6ff] transition-colors relative z-20 flex items-center justify-center gap-2">
+                                        View Live Site <i data-lucide="external-link" class="w-3 h-3"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Services (Dark Section) -->
+        <section class="w-full py-20 md:py-24 bg-brand-dark">
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12 text-center mb-16 reveal">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] flex items-center justify-center gap-2 mb-4">
+                    <span class="w-1.5 h-1.5 bg-brand-cyan"></span> EXPERTISE
+                </p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white hover:text-[#01f6ff] transition-colors">Fresh Ideas, Measurable Business</h2>
+            </div>
+
+            <div class="max-w-[1200px] mx-auto px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border border-gray-800 reveal reveal-delay-2">
+                
+                <div class="p-8 md:p-12 border border-gray-800 text-center hover:bg-[#222] transition-colors group cursor-default hover:border-[#01f6ff] relative z-10 hover:z-20">
+                    <i data-lucide="layout" class="w-10 h-10 text-brand-cyan mx-auto mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-bold text-white mb-4">Amazon & Shopify CRO</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300">SEO, A+ Content, Storefront Customization, optimizing conversion rates for top brands.</p>
+                </div>
+                
+                <div class="p-8 md:p-12 border border-gray-800 text-center hover:bg-[#222] transition-colors group cursor-default hover:border-[#01f6ff] relative z-10 hover:z-20">
+                    <i data-lucide="box" class="w-10 h-10 text-brand-cyan mx-auto mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-bold text-white mb-4">3D Multimedia</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300">High-fidelity 3D product renders and modeling using Blender for technical demonstrations.</p>
+                </div>
+
+                <div class="p-8 md:p-12 border border-gray-800 text-center hover:bg-[#222] transition-colors group cursor-default hover:border-[#01f6ff] relative z-10 hover:z-20">
+                    <i data-lucide="video" class="w-10 h-10 text-brand-cyan mx-auto mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-bold text-white mb-4">Video Production</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300">Multi-channel video campaigns and Animaker explainer videos to boost ad performance.</p>
+                </div>
+
+                <div class="p-8 md:p-12 border border-gray-800 text-center hover:bg-[#222] transition-colors group cursor-default hover:border-[#01f6ff] relative z-10 hover:z-20">
+                    <i data-lucide="pen-tool" class="w-10 h-10 text-brand-cyan mx-auto mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-bold text-white mb-4">UI/UX Strategy</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300">Wireframing, prototyping, and landing page optimization (WordPress/Elementor).</p>
+                </div>
+
+                <div class="p-8 md:p-12 border border-gray-800 text-center hover:bg-[#222] transition-colors group cursor-default hover:border-[#01f6ff] relative z-10 hover:z-20">
+                    <i data-lucide="cpu" class="w-10 h-10 text-brand-cyan mx-auto mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-bold text-white mb-4">AI Integration</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300">AI-Assisted image generation (Dreamina) and workflow automation (Gemini Pro, OpenAI).</p>
+                </div>
+
+                <div class="p-8 md:p-12 border border-gray-800 text-center hover:bg-[#222] transition-colors group cursor-default hover:border-[#01f6ff] relative z-10 hover:z-20">
+                    <i data-lucide="briefcase" class="w-10 h-10 text-brand-cyan mx-auto mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-xl font-bold text-white mb-4">Agile Management</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300">Cross-functional team leadership, stakeholder management, and brand governance.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Resume / Skills Section -->
+        <section id="resume" class="w-full py-20 md:py-24 bg-[#FCFCFC]">
+            <div class="max-w-[1200px] mx-auto px-6 md:px-12 mb-16 text-center reveal">
+                <p class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] flex items-center justify-center gap-2 mb-4">
+                    <span class="w-1.5 h-1.5 bg-brand-cyan rounded-full"></span> MY RESUME
+                </p>
+                <h2 class="text-3xl md:text-5xl font-bold text-brand-black">Aesthetic Sense of Creativity</h2>
+            </div>
+
+            <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+                
+                <div class="max-w-[850px] mx-auto mb-20 reveal reveal-delay-1">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-400 mb-10 text-center uppercase tracking-widest">Work Experience</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="p-6 md:p-10 bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_15px_35px_rgba(1,246,255,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2 md:gap-4">
+                                <h4 class="text-xl md:text-2xl font-bold text-brand-black group-hover:text-[#01f6ff] transition-colors">MultiplyMii <span class="font-medium text-gray-400 text-base md:text-lg block sm:inline">(Client: Plugable)</span></h4>
+                                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest sm:whitespace-nowrap group-hover:text-brand-black transition-colors">May 2025 – Apr 2026</p>
+                            </div>
+                            <div class="bg-[#01f6ff] text-black font-bold px-4 py-2 uppercase tracking-[0.15em] inline-block text-[10px] md:text-xs mb-6 rounded-sm shadow-[0_0_10px_rgba(1,246,255,0.2)] group-hover:shadow-[0_0_20px_rgba(1,246,255,0.6)] transition-shadow">
+                                Creatives Designer
+                            </div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Generated high-impact Amazon listings and A+ Content using Adobe Creative Suite to conduct visual trend analysis, improving conversion rates by 18%–30% YTD.
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Produced 3D product renders and animations via Blender while collaborating with product managers to showcase technical features, increasing user engagement by 28%.
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Strategized multi-channel video campaigns for consumer electronics to optimize click-through rates (CTR), resulting in a 20% boost in ad performance.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-6 md:p-10 bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_15px_35px_rgba(1,246,255,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2 md:gap-4">
+                                <h4 class="text-xl md:text-2xl font-bold text-brand-black group-hover:text-[#01f6ff] transition-colors">Vertex Consulting <span class="font-medium text-gray-400 text-base md:text-lg block sm:inline">(Australia)</span></h4>
+                                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest sm:whitespace-nowrap group-hover:text-brand-black transition-colors">Jun 2024 – May 2025</p>
+                            </div>
+                            <div class="bg-[#01f6ff] text-black font-bold px-4 py-2 uppercase tracking-[0.15em] inline-block text-[10px] md:text-xs mb-6 rounded-sm shadow-[0_0_10px_rgba(1,246,255,0.2)] group-hover:shadow-[0_0_20px_rgba(1,246,255,0.6)] transition-shadow">
+                                Multimedia Manager (Creative Lead)
+                            </div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Directed creative strategy for SaaS platforms using UI/UX best practices, partnering with developers to design assets that improved user engagement by 25%.
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Spearheaded the implementation of AI-assisted design systems to automate content workflows, reducing production turnaround time by 35%–50%.
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Managed cross-functional teams to align brand governance with marketing goals, ensuring 100% consistency during rapid platform scaling for 8+ brands.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-6 md:p-10 bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_15px_35px_rgba(1,246,255,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2 md:gap-4">
+                                <h4 class="text-xl md:text-2xl font-bold text-brand-black group-hover:text-[#01f6ff] transition-colors">VAA Philippines</h4>
+                                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest sm:whitespace-nowrap group-hover:text-brand-black transition-colors">Aug 2022 – Sep 2025</p>
+                            </div>
+                            <div class="bg-[#01f6ff] text-black font-bold px-4 py-2 uppercase tracking-[0.15em] inline-block text-[10px] md:text-xs mb-6 rounded-sm shadow-[0_0_10px_rgba(1,246,255,0.2)] group-hover:shadow-[0_0_20px_rgba(1,246,255,0.6)] transition-shadow">
+                                Amazon Creatives Designer
+                            </div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Analyzed competitor marketplace data to design high-converting EBC/A+ Content, increasing sales conversion by 12%–25% for health and home brands.
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Built and optimized Shopify storefronts with a focus on mobile-first UX, collaborating with stakeholders to improve user retention by 20%.
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Evaluated listing performance metrics to refine creative assets, ensuring all designs met strict Amazon SEO and brand guidelines.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-6 md:p-10 bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_15px_35px_rgba(1,246,255,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2 md:gap-4">
+                                <h4 class="text-xl md:text-2xl font-bold text-brand-black group-hover:text-[#01f6ff] transition-colors">EMS Digital Ltd. <span class="font-medium text-gray-400 text-base md:text-lg block sm:inline">(Israel/Canada)</span></h4>
+                                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest sm:whitespace-nowrap group-hover:text-brand-black transition-colors">Jan 2020 – Oct 2022</p>
+                            </div>
+                            <div class="bg-[#01f6ff] text-black font-bold px-4 py-2 uppercase tracking-[0.15em] inline-block text-[10px] md:text-xs mb-6 rounded-sm shadow-[0_0_10px_rgba(1,246,255,0.2)] group-hover:shadow-[0_0_20px_rgba(1,246,255,0.6)] transition-shadow">
+                                Senior Project Design Manager
+                            </div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Partnered with 20+ international clients to deliver digital business card solutions, developing high-converting landing pages that increased lead generation by 22%.
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Optimized UX and mobile-first performance on WordPress/Elementor, reducing bounce rates by 18% and improving cross-device engagement.
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Managed end-to-end design workflows to maintain strict brand guidelines while improving site speed and navigation for global users.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-6 md:p-10 bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_15px_35px_rgba(1,246,255,0.2)] hover:-translate-y-1.5 transition-all duration-300 group">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2 md:gap-4">
+                                <h4 class="text-xl md:text-2xl font-bold text-brand-black group-hover:text-[#01f6ff] transition-colors">Transformational Outsourcing</h4>
+                                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest sm:whitespace-nowrap group-hover:text-brand-black transition-colors">Jan 2017 – Dec 2019</p>
+                            </div>
+                            <div class="bg-[#01f6ff] text-black font-bold px-4 py-2 uppercase tracking-[0.15em] inline-block text-[10px] md:text-xs mb-6 rounded-sm shadow-[0_0_10px_rgba(1,246,255,0.2)] group-hover:shadow-[0_0_20px_rgba(1,246,255,0.6)] transition-shadow">
+                                Social Media Analyst & Digital Designer
+                            </div>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Developed and implemented Facebook Ads Manager campaigns for legal and real estate clients, collaborating with account managers to increase lead generation by 20%.
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Created high-converting ad designs and brand-aligned visuals using Adobe Photoshop, partnering with copywriters to boost ad engagement rates by 22%.
+                                </li>
+                                <li class="flex items-start gap-3 md:gap-4 text-sm text-gray-600 leading-relaxed font-medium">
+                                    <span class="w-2 h-2 bg-[#01f6ff] rounded-full mt-1.5 shrink-0 group-hover:scale-150 transition-transform"></span>
+                                    Produced animated explainer videos and managed full YouTube optimization, including thumbnails and SEO-friendly descriptions, to increase organic discoverability.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16 mt-16 border-t border-gray-200 reveal reveal-delay-2">
+                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_15px_35px_rgba(1,246,255,0.2)]">
+                        <h3 class="text-xl font-bold text-brand-black mb-6 uppercase tracking-widest">Education & Certs</h3>
+                        <div class="space-y-6">
+                            <div class="group border-l-2 border-[#01f6ff] pl-4 hover:border-l-4 transition-all">
+                                <h4 class="text-base font-bold text-brand-black">DHVTSU</h4>
+                                <span class="block text-sm font-medium text-gray-500 mt-1 mb-2">BS IT (Multimedia Arts)</span>
+                                <p class="text-[10px] font-bold text-brand-black bg-[#EBEBEB] px-2 py-1 inline-block uppercase tracking-widest rounded-sm">2012 – 2016</p>
+                            </div>
+                            <div class="group border-l-2 border-[#01f6ff] pl-4 hover:border-l-4 transition-all">
+                                <h4 class="text-base font-bold text-brand-black">Udemy</h4>
+                                <span class="block text-sm font-medium text-gray-500 mt-1 mb-2">Complete WordPress Dev Course</span>
+                                <p class="text-[10px] font-bold text-brand-black bg-[#EBEBEB] px-2 py-1 inline-block uppercase tracking-widest rounded-sm">Certified 2026</p>
+                            </div>
+                            <div class="group border-l-2 border-[#01f6ff] pl-4 hover:border-l-4 transition-all">
+                                <h4 class="text-base font-bold text-brand-black">MTF Institute</h4>
+                                <span class="block text-sm font-medium text-gray-500 mt-1 mb-2">Prof. Certificate in Management</span>
+                                <p class="text-[10px] font-bold text-brand-black bg-[#EBEBEB] px-2 py-1 inline-block uppercase tracking-widest rounded-sm">Completed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-[#111111] p-6 md:p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-[#111111] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_15px_35px_rgba(1,246,255,0.2)] group">
+                        <h3 class="text-xl font-bold text-white mb-6 uppercase tracking-widest group-hover:text-[#01f6ff] transition-colors">Core Skills</h3>
+                        <ul class="space-y-4 text-sm text-gray-300 font-medium">
+                            <li class="flex items-center gap-3 hover:text-white transition-colors"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#01f6ff] shrink-0"></i> Conversion Rate Optimization</li>
+                            <li class="flex items-center gap-3 hover:text-white transition-colors"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#01f6ff] shrink-0"></i> UI/UX Strategy & Wireframing</li>
+                            <li class="flex items-center gap-3 hover:text-white transition-colors"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#01f6ff] shrink-0"></i> eCommerce Storefront Design</li>
+                            <li class="flex items-center gap-3 hover:text-white transition-colors"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#01f6ff] shrink-0"></i> Visual Trend Analysis</li>
+                            <li class="flex items-center gap-3 hover:text-white transition-colors"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#01f6ff] shrink-0"></i> Agile Project Coordination</li>
+                            <li class="flex items-center gap-3 hover:text-white transition-colors"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#01f6ff] shrink-0"></i> Data-Driven Performance Mgt.</li>
+                            <li class="flex items-center gap-3 hover:text-white transition-colors"><i data-lucide="check-circle-2" class="w-5 h-5 text-[#01f6ff] shrink-0"></i> Stakeholder Management</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_15px_35px_rgba(1,246,255,0.2)]">
+                        <h3 class="text-xl font-bold text-brand-black mb-6 uppercase tracking-widest">Software & Tools</h3>
+                        <ul class="space-y-4 text-sm text-gray-600 font-medium">
+                            <li class="flex items-center gap-3 hover:text-[#01f6ff] transition-colors"><i data-lucide="pen-tool" class="w-5 h-5 text-gray-400 shrink-0"></i> Adobe Photoshop, Figma</li>
+                            <li class="flex items-center gap-3 hover:text-[#01f6ff] transition-colors"><i data-lucide="box" class="w-5 h-5 text-gray-400 shrink-0"></i> Blender 3D, Animaker</li>
+                            <li class="flex items-center gap-3 hover:text-[#01f6ff] transition-colors"><i data-lucide="layout" class="w-5 h-5 text-gray-400 shrink-0"></i> Elementor, WordPress</li>
+                            <li class="flex items-center gap-3 hover:text-[#01f6ff] transition-colors"><i data-lucide="shopping-bag" class="w-5 h-5 text-gray-400 shrink-0"></i> Amazon Central, Shopify</li>
+                            <li class="flex items-center gap-3 hover:text-[#01f6ff] transition-colors"><i data-lucide="bot" class="w-5 h-5 text-gray-400 shrink-0"></i> Midjourney, Gemini, OpenAI</li>
+                            <li class="flex items-center gap-3 hover:text-[#01f6ff] transition-colors"><i data-lucide="bar-chart" class="w-5 h-5 text-gray-400 shrink-0"></i> Facebook Ads Manager</li>
+                            <li class="flex items-center gap-3 hover:text-[#01f6ff] transition-colors"><i data-lucide="mail" class="w-5 h-5 text-gray-400 shrink-0"></i> Mailchimp, Klaviyo</li>
+                            <li class="flex items-center gap-3 hover:text-[#01f6ff] transition-colors"><i data-lucide="youtube" class="w-5 h-5 text-gray-400 shrink-0"></i> YouTube SEO Analytics</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="mt-16 text-center reveal reveal-delay-3">
+                    <a href="https://drive.google.com/file/d/1OJqU9sSxVjV8cUwtrC55AvniThkHbW6a/view?usp=sharing" download class="inline-flex items-center gap-2 bg-[#01f6ff] text-brand-black px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-black hover:text-[#01f6ff] transition-all rounded-sm shadow-[0_4px_15px_rgba(1,246,255,0.3)] hover:shadow-[0_0_20px_rgba(1,246,255,0.6)] hover:-translate-y-1 w-full sm:w-auto justify-center">
+                        <i data-lucide="download" class="w-4 h-4"></i> Download Full Resume
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="w-full py-20 md:py-24 bg-brand-dark relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-dots-light opacity-10 z-0"></div>
+            <div class="absolute bottom-0 left-0 w-48 h-48 md:w-64 md:h-64 bg-dots-light opacity-10 z-0"></div>
+            
+            <div class="max-w-[800px] mx-auto px-6 md:px-12 text-center relative z-10 reveal">
+                <p class="text-xs font-bold text-[#01f6ff] uppercase tracking-[0.2em] flex items-center justify-center gap-2 mb-4">
+                    <span class="w-1.5 h-1.5 bg-[#01f6ff]"></span> GET STARTED
+                </p>
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">Let's start your project today!</h2>
+                <p class="text-gray-400 font-medium text-sm md:text-base max-w-lg mx-auto mb-10">
+                    Currently available for new opportunities. Let's align your brand governance with marketing goals ensuring 100% consistency.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <!-- Updated Let's Talk Button: Default Mint Blue -> Hover Black -->
+                    <a href="#" onclick="openContactModal(event)" class="bg-[#01f6ff] text-black border-2 border-[#01f6ff] px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#111111] hover:text-[#01f6ff] transition-all shadow-[0_0_10px_rgba(1,246,255,0.15)] hover:shadow-[0_0_20px_rgba(1,246,255,0.4)] hover:-translate-y-1 rounded-sm w-full sm:w-auto text-center cursor-pointer">
+                        Let's Talk!
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer (Dark Section) -->
+        <footer class="w-full bg-brand-black pt-16 md:pt-20 pb-10 border-t border-gray-900 reveal">
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-16 border-b border-gray-800 pb-16">
+                <div class="md:col-span-1">
+                    <h3 class="text-2xl font-black tracking-widest text-white uppercase mb-6 hover:text-[#01f6ff] transition-colors cursor-default">Elevate</h3>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-[#01f6ff] hover:scale-110 transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-[#01f6ff] hover:scale-110 transition-all"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-[#01f6ff] hover:scale-110 transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contact Info</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="hover:text-white transition-colors cursor-pointer">rnzcarryon@gmail.com</li>
+                        <li class="hover:text-white transition-colors cursor-pointer">+63 9764786935</li>
+                        <li class="hover:text-white transition-colors cursor-pointer">Mabalacat City,<br>Pampanga, Philippines</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Explore</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-[#01f6ff] transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-[#01f6ff] transition-colors">About</a></li>
+                        <li><a href="#portfolio" class="hover:text-[#01f6ff] transition-colors">Projects</a></li>
+                        <li><a href="#resume" class="hover:text-[#01f6ff] transition-colors">Resume</a></li>
+                    </ul>
+                </div>
+                <!-- REPLACED SUPPORT WITH MINI CONTACT FORM -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Quick Message</h4>
+                    <form class="space-y-3" onsubmit="event.preventDefault();">
+                        <input type="text" placeholder="Your Name" required class="w-full bg-[#1A1A1A] border border-gray-800 text-white text-xs px-4 py-2.5 rounded-sm focus:outline-none focus:border-[#01f6ff] transition-colors">
+                        <input type="email" placeholder="Your Email" required class="w-full bg-[#1A1A1A] border border-gray-800 text-white text-xs px-4 py-2.5 rounded-sm focus:outline-none focus:border-[#01f6ff] transition-colors">
+                        <textarea placeholder="Your Message" rows="2" required class="w-full bg-[#1A1A1A] border border-gray-800 text-white text-xs px-4 py-2.5 rounded-sm focus:outline-none focus:border-[#01f6ff] transition-colors resize-none"></textarea>
+                        <button type="submit" class="w-full bg-[#01f6ff] text-black border border-[#01f6ff] font-bold uppercase tracking-widest text-[10px] py-2.5 rounded-sm hover:bg-[#111111] hover:text-[#01f6ff] transition-colors">Send</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-medium text-center md:text-left gap-4 md:gap-0">
+                <p>Copyright © 2026 Renzh Neil Carreon</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms & Services</a>
+                </div>
+            </div>
+        </footer>
+
+       <!-- Fullscreen Lightbox Modal -->
+       <div id="portfolio-lightbox" class="fixed inset-0 z-[9999] bg-black/95 hidden flex-col items-center justify-center transition-opacity" style="opacity: 0;">
+           <button onclick="closeLightbox()" class="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-brand-cyan hover:rotate-90 transition-all z-50">
+               <i data-lucide="x" class="w-8 h-8 md:w-10 md:h-10"></i>
+           </button>
+           <div class="w-full h-full p-4 md:p-12 overflow-y-auto flex justify-center lightbox-scroll" onclick="closeLightbox()">
+               <img id="lightbox-img" src="" class="w-auto h-auto max-w-full object-contain shadow-[0_0_50px_rgba(1,246,255,0.2)] my-auto transition-transform duration-300 scale-95" onclick="event.stopPropagation()">
+           </div>
+       </div>
+
+       <!-- Popup Contact Form Modal -->
+       <div id="contact-modal" class="fixed inset-0 z-[9999] bg-black/90 hidden flex-col items-center justify-center transition-opacity opacity-0 px-4">
+           <div class="bg-[#111111] border border-gray-800 w-full max-w-lg rounded-xl p-6 md:p-10 relative transform scale-95 transition-transform duration-300 shadow-[0_0_40px_rgba(0,0,0,0.8)]" id="contact-modal-box">
+               <button onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-500 hover:text-[#01f6ff] hover:rotate-90 transition-all focus:outline-none">
+                   <i data-lucide="x" class="w-6 h-6"></i>
+               </button>
+               <h3 class="text-3xl font-bold text-white mb-2">Let's Talk</h3>
+               <p class="text-gray-400 text-sm mb-6">Fill out the form below and I'll get back to you shortly.</p>
+               
+               <form class="space-y-4" onsubmit="event.preventDefault(); closeContactModal();">
+                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                       <input type="text" placeholder="Your Name" required class="w-full bg-[#1A1A1A] border border-gray-800 text-white text-sm px-4 py-3 rounded-sm focus:outline-none focus:border-[#01f6ff] transition-colors">
+                       <input type="tel" placeholder="Phone Number" class="w-full bg-[#1A1A1A] border border-gray-800 text-white text-sm px-4 py-3 rounded-sm focus:outline-none focus:border-[#01f6ff] transition-colors">
+                   </div>
+                   <input type="email" placeholder="Email Address" required class="w-full bg-[#1A1A1A] border border-gray-800 text-white text-sm px-4 py-3 rounded-sm focus:outline-none focus:border-[#01f6ff] transition-colors">
+                   
+                   <select class="w-full bg-[#1A1A1A] border border-gray-800 text-gray-300 text-sm px-4 py-3 rounded-sm focus:outline-none focus:border-[#01f6ff] transition-colors appearance-none custom-select-arrow" required>
+                       <option value="" disabled selected>Select a Service</option>
+                       <option value="Amazon & Shopify CRO">Amazon & Shopify CRO</option>
+                       <option value="3D Multimedia & Video">3D Multimedia & Video</option>
+                       <option value="UI/UX Strategy & Web Design">UI/UX Strategy & Web Design</option>
+                       <option value="AI Integration">AI Integration</option>
+                       <option value="Agile Management">Agile Management</option>
+                       <option value="Other">Other</option>
+                   </select>
+                   
+                   <textarea placeholder="Tell me about your project..." rows="4" required class="w-full bg-[#1A1A1A] border border-gray-800 text-white text-sm px-4 py-3 rounded-sm focus:outline-none focus:border-[#01f6ff] transition-colors resize-none hide-scrollbar"></textarea>
+                   
+                   <!-- Updated Let's Talk Button: Default Mint Blue -> Hover Black -->
+                   <button type="submit" class="w-full bg-[#01f6ff] text-black border border-[#01f6ff] font-bold uppercase tracking-widest text-sm py-4 rounded-sm hover:bg-[#111111] hover:text-[#01f6ff] transition-all shadow-[0_0_15px_rgba(1,246,255,0.2)] hover:shadow-[0_0_20px_rgba(1,246,255,0.5)] mt-2">Send Message</button>
+               </form>
+           </div>
+       </div>
+
+    </div>
+    <!-- END MASTER WRAPPER -->
+
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = mobileMenu.querySelectorAll('a');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // Main Image Carousel Logic
+        const sliders = {};
+        window.slide = function(sliderId, direction) {
+            const track = document.getElementById(sliderId);
+            if (!sliders[sliderId]) {
+                sliders[sliderId] = { index: 0, max: track.children.length - 1 };
+            }
+            let s = sliders[sliderId];
+            
+            s.index += direction;
+            if (s.index < 0) s.index = s.max;
+            if (s.index > s.max) s.index = 0;
+            
+            track.style.setProperty('transform', `translateX(-${s.index * 100}%)`, 'important');
+        }
+
+        // Horizontal scrolling logic for Video & Web Flex Galleries
+        window.scrollTrack = function(trackId, direction) {
+            const track = document.getElementById(trackId);
+            if(track) {
+                const firstChild = track.querySelector('.shrink-0');
+                if(firstChild) {
+                    // Item width + standard gap of ~24px
+                    const scrollAmount = firstChild.offsetWidth + 24; 
+                    track.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+                }
+            }
+        };
+
+        // Fullscreen Lightbox Logic with scaling animation
+        const lightbox = document.getElementById('portfolio-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        window.openLightbox = function(imageSrc) {
+            lightboxImg.src = imageSrc;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            setTimeout(() => {
+                lightbox.style.setProperty('opacity', '1', 'important');
+                lightboxImg.classList.remove('scale-95');
+                lightboxImg.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        window.closeLightbox = function() {
+            lightbox.style.setProperty('opacity', '0', 'important');
+            lightboxImg.classList.remove('scale-100');
+            lightboxImg.classList.add('scale-95');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                lightboxImg.src = "";
+                document.body.style.overflow = 'auto'; 
+            }, 300); 
+        }
+
+        // Contact Modal Logic
+        const contactModal = document.getElementById('contact-modal');
+        const contactModalBox = document.getElementById('contact-modal-box');
+
+        window.openContactModal = function(e) {
+            if(e) e.preventDefault();
+            // Close mobile menu if it was triggered from there
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            
+            contactModal.classList.remove('hidden');
+            contactModal.classList.add('flex');
+            setTimeout(() => {
+                contactModal.classList.remove('opacity-0');
+                contactModal.classList.add('opacity-100');
+                contactModalBox.classList.remove('scale-95');
+                contactModalBox.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        window.closeContactModal = function() {
+            contactModal.classList.remove('opacity-100');
+            contactModal.classList.add('opacity-0');
+            contactModalBox.classList.remove('scale-100');
+            contactModalBox.classList.add('scale-95');
+            setTimeout(() => {
+                contactModal.classList.add('hidden');
+                contactModal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        // Close Contact Modal on Background Click
+        contactModal.addEventListener('click', function(e) {
+            if (e.target === contactModal) {
+                closeContactModal();
+            }
+        });
+
+        // Scroll Reveal Animation Observer
+        document.addEventListener("DOMContentLoaded", function() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.1
+            });
+
+            reveals.forEach(reveal => revealObserver.observe(reveal));
+        });
+    </script>
+</body>
+</html>
